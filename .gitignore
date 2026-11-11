@@ -218,3 +218,53 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# =====================================
+# NetOps AI - Project Specific
+# =====================================
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+venv/
+
+# Frontend dependencies
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# ML model artifacts
+*.joblib
+*.pkl
+*.h5
+*.pt
+*.onnx
+
+# Dataset files - avoid uploading large raw data
+data/raw/*
+data/processed/*
+data/synthetic/*
+
+# Preserve dataset documentation/placeholders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/synthetic/.gitkeep
+
+# ML experiment outputs
+mlruns/
+wandb/
+artifacts/
+
+# Application logs
+logs/
+*.log
+
+# Generated reports
+reports/generated/
+
+# Docker local overrides
+docker-compose.override.yml

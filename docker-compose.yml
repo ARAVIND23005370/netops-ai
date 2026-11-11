@@ -1,0 +1,26 @@
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: netops-ai-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-netops_ai}
+      POSTGRES_USER: ${POSTGRES_USER:-netops_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-netops_user} -d ${POSTGRES_DB:-netops_ai}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

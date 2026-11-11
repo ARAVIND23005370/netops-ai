@@ -1,0 +1,20 @@
+
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+psycopg[binary]
+
+# Configuration and Environment
+pydantic-settings
+python-dotenv
+
+# Data Processing
+numpy
+pandas
+
+# Machine Learning
+scikit-learn
+joblib
